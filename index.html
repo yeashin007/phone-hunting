@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Hunting</title>
+
+    <!-- Daisy UI and Tailwind -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header class="w-11/12 mx-auto">
+      <!-- Navbar -->
+      <div>
+        <div class="navbar bg-base-100">
+          <div class="flex-1">
+            <a class="btn btn-ghost text-xl">Hot Gadgets</a>
+          </div>
+          <div class="flex-none">
+            <button class="btn">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="my-10 w-11/12 mx-auto">
+      <!-- Spinner -->
+      <div class="fixed top-1/2 left-1/2">
+        <span
+          id="loading-spin"
+          class="loading loading-spinner text-blue-800 w-20 hidden"
+        ></span>
+      </div>
+      <!-- Banner Section -->
+      <div class="text-center space-y-5">
+        <h1 class="text-4xl font-bold">Apple Iphone 13 Pro Max</h1>
+        <p class="w-1/2 mx-auto">
+          There are many variations of passages of Lorem Ipsum available, but
+          the majority have suffered alteration in some form, by injected humou.
+        </p>
+        <button class="btn font-bold">Buy Now</button>
+        <div class="flex justify-center items-center">
+          <img src="images/phone-pic.png" alt="" />
+        </div>
+      </div>
+
+      <!-- Search section -->
+      <section class="mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-6">Search your phone</h2>
+        <div class="flex justify-center">
+          <label class="input input-bordered flex w-1/2 items-center gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              class="w-4 h-4 opacity-100 text-red-400"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <input
+              id="search-container"
+              type="text"
+              class="mr-3"
+              placeholder="Search"
+            />
+          </label>
+          <button onclick="searchHandler()" class="btn ml-3">Search</button>
+        </div>
+      </section>
+
+      <!-- card container -->
+      <section class="my-10">
+        <div
+          id="show-container"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+        >
+          <div class="space-y-3 mx-auto text-center">
+            <img src="images/phone-pic.png" alt="" />
+            <h2 class="text-2xl font-bold">Phone Name</h2>
+            <p>Phone details</p>
+            <p class="text-lg font-bold">Price</p>
+            <button class="btn bg-green-800 text-white">Show Details</button>
+          </div>
+        </div>
+        <div class="text-center mt-10">
+          <button
+            onclick="showAll()"
+            id="btn-show-more"
+            class="btn btn-accent hidden items-center"
+          >
+            Show More <span class="text-2xl">&rarr;</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Modal section -->
+      <!-- You can open the modal using ID.showModal() method -->
+
+      <dialog id="show_modal" class="modal h-auto">
+        <div class="modal-box bg-gray-200">
+          <form method="dialog">
+            <button
+              class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+            >
+              ✕
+            </button>
+          </form>
+          <div id="details-modal">
+            <p><span class="bold text-lg">Storage: </span>Storage details</p>
+          </div>
+        </div>
+      </dialog>
+    </main>
+    <footer></footer>
+
+    <!-- Javascript file -->
+    <script src="js/phone.js"></script>
+  </body>
+</html>
